@@ -27,7 +27,7 @@ export function Careers() {
             </h2>
             <p className="mt-6 max-w-[54ch] text-[16.5px] leading-relaxed text-white/55">
               L’application arrive à la mi-octobre. Produit, conformité, déploiement : l’équipe se
-              constitue dès aujourd’hui sur les corridors Europe – Afrique – Caraïbes.
+              constitue dès aujourd’hui sur les corridors Europe, Afrique et Caraïbes.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
@@ -55,7 +55,7 @@ export function Careers() {
             <span className="eyebrow">Profils recherchés</span>
             <h3 className="mt-4 font-display text-[clamp(22px,2.8vw,30px)] text-white">Quatre familles de compétences</h3>
             <p className="mt-3 text-[14px] text-white/40">
-              Les intitulés définitifs seront publiés prochainement — les candidatures spontanées sont examinées dès maintenant.
+              Les intitulés définitifs seront publiés prochainement. Les candidatures spontanées sont examinées dès maintenant.
             </p>
           </Reveal>
 

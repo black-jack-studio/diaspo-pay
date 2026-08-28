@@ -39,14 +39,14 @@ export function Investors() {
             <div className="mt-4 font-display text-[clamp(48px,7vw,88px)] leading-none text-white">
               <Counter to={100} /> <span className="text-[var(--color-accent-soft)]">Md€</span>
             </div>
-            <div className="mt-3 font-mono text-[10.5px] text-white/30">SOURCE — BANQUE MONDIALE, 2024</div>
+            <div className="mt-3 font-mono text-[10.5px] text-white/30">SOURCE · BANQUE MONDIALE, 2024</div>
           </div>
           <div className="bg-[#080c17] p-10 md:p-12">
             <div className="font-mono text-[11px] tracking-[0.14em] text-white/35">PART DU PIB AFRICAIN</div>
             <div className="mt-4 font-display text-[clamp(48px,7vw,88px)] leading-none text-white">
               <Counter to={6} suffix="%" />
             </div>
-            <div className="mt-3 font-mono text-[10.5px] text-white/30">SOURCE — BANQUE MONDIALE, 2024</div>
+            <div className="mt-3 font-mono text-[10.5px] text-white/30">SOURCE · BANQUE MONDIALE, 2024</div>
           </div>
         </Reveal>
 
@@ -68,7 +68,7 @@ export function Investors() {
             <h3 className="mt-5 font-display text-[19px] font-medium text-white">Innovation protégée</h3>
             <ul className="mt-4 space-y-2.5 text-[14.5px] leading-relaxed text-white/55">
               <li>Marque Diaspo-Pay déposée.</li>
-              <li>Brevet déposé — INPI FR2606158.</li>
+              <li>Brevet déposé, INPI FR2606158.</li>
               <li>Démarches d’extension internationale en cours.</li>
             </ul>
             <p className="mt-5 border-t border-white/10 pt-5 text-[13.5px] leading-relaxed text-white/40">

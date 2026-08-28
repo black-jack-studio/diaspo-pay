@@ -6,17 +6,17 @@ import {
 } from './Icons'
 
 const USES = [
-  { icon: IconTv, title: 'Abonnements audiovisuels', body: 'Canal+, bouquets locaux — réglés directement chez l’opérateur, sans jamais changer d’application.' },
+  { icon: IconTv, title: 'Abonnements audiovisuels', body: 'Canal+, bouquets locaux : réglés directement chez l’opérateur, sans jamais changer d’application.' },
   { icon: IconWifi, title: 'Internet & mobile', body: 'Forfaits rechargés à échéance, pour que la ligne d’un proche ne coupe jamais au mauvais moment.' },
-  { icon: IconHome, title: 'Loyer & charges', body: 'Le loyer payé à date, avec un justificatif conservé de votre côté — chaque mois, sans y penser.' },
+  { icon: IconHome, title: 'Loyer & charges', body: 'Le loyer payé à date, avec un justificatif conservé de votre côté, chaque mois, sans y penser.' },
   { icon: IconHeart, title: 'Santé & hospitalisation', body: 'Frais médicaux et cotisations d’assurance pris en charge dans l’instant, même en urgence familiale.' },
-  { icon: IconCap, title: 'Frais de scolarité', body: 'Le règlement part directement à l’université — vous savez que l’inscription est confirmée.' },
-  { icon: IconCompass, title: 'Réservations & services', body: 'Hôtel, location, taxi, avance immobilière — préparés depuis l’étranger, sans intermédiaire opaque.' },
+  { icon: IconCap, title: 'Frais de scolarité', body: 'Le règlement part directement à l’université : vous savez que l’inscription est confirmée.' },
+  { icon: IconCompass, title: 'Réservations & services', body: 'Hôtel, location, taxi, avance immobilière : préparés depuis l’étranger, sans intermédiaire opaque.' },
 ]
 
 const STEPS = [
-  { icon: IconScan, title: 'Scannez la facture', body: 'Photographiez la facture reçue par votre proche, même manuscrite — ou choisissez l’organisme dans l’application.' },
-  { icon: IconSparkle, title: 'L’IA la lit pour vous', body: 'Montant, émetteur, échéance : extraits automatiquement. Vous vérifiez, vous validez — zéro ressaisie.' },
+  { icon: IconScan, title: 'Scannez la facture', body: 'Photographiez la facture reçue par votre proche, même manuscrite, ou choisissez l’organisme dans l’application.' },
+  { icon: IconSparkle, title: 'L’IA la lit pour vous', body: 'Montant, émetteur, échéance : extraits automatiquement. Vous vérifiez, vous validez, zéro ressaisie.' },
   { icon: IconSend, title: 'Le paiement part à la source', body: 'L’argent est réglé directement à l’organisme émetteur, jamais sur un compte tiers. C’est le cœur du paiement ciblé.' },
   { icon: IconReceipt, title: 'Vous recevez la preuve', body: 'Statut, reçu, historique : remontés en temps réel, consultables à tout moment dans l’application.' },
 ]
@@ -35,8 +35,8 @@ export function Solution() {
           <p className="mt-6 max-w-[56ch] text-[16.5px] leading-relaxed text-white/55">
             Chaque année, la diaspora envoie de l’argent liquide à ses proches restés au pays.
             L’intention est entière. Mais une fois la somme remise, elle échappe : réaffectée en
-            route, ou l’échéance qu’on voulait couvrir reste impayée. Ce n’est le tort de personne
-            — c’est la limite du liquide.
+            route, ou l’échéance qu’on voulait couvrir reste impayée. Ce n’est le tort de
+            personne, c’est la limite du liquide.
           </p>
         </Reveal>
 
@@ -50,7 +50,7 @@ export function Solution() {
           <div className="border-t border-white/10 bg-gradient-to-br from-[#101b34] to-[#0b1226] p-8 md:border-l md:border-t-0 md:p-10">
             <div className="font-mono text-[10.5px] tracking-[0.14em] text-[var(--color-accent-soft)]">AVEC DIASPO-PAY</div>
             <p className="mt-4 font-accent text-[22px] leading-snug text-white">
-              Vous choisissez la facture. Elle est réglée à sa source — vous recevez la preuve.
+              Vous choisissez la facture. Elle est réglée à sa source, et vous recevez la preuve.
             </p>
           </div>
         </Reveal>
@@ -115,7 +115,7 @@ export function Solution() {
               Beaucoup d’établissements au pays n’ont pas de facturation numérique. Diaspo-Pay
               intègre une lecture assistée par IA capable d’interpréter une facture photographiée,
               y compris manuscrite, pour en extraire l’organisme, la référence et le montant dû.
-              Vous vérifiez toujours avant de valider — l’IA accélère, elle ne décide jamais à
+              Vous vérifiez toujours avant de valider. L’IA accélère, elle ne décide jamais à
               votre place.
             </p>
             <div className="mt-7 flex flex-wrap gap-2">

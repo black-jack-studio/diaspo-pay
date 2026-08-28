@@ -27,7 +27,7 @@ export function About() {
               l’échéance est réglée, et que la valeur reste dans l’économie du pays. »
             </blockquote>
             <cite className="mt-6 block font-mono text-[11px] not-italic tracking-[0.1em] text-white/40">
-              ERIC KOFFOUNDA — FONDATEUR DE DIASPO-PAY, NÎMES (GARD)
+              ERIC KOFFOUNDA · FONDATEUR DE DIASPO-PAY, NÎMES (GARD)
             </cite>
           </Reveal>
         </div>
@@ -40,7 +40,7 @@ export function About() {
             </h2>
             <p className="mt-6 text-[15px] leading-relaxed text-white/55">
               Dans la diaspora, l’entraide n’est pas un supplément : elle fait partie de
-              l’équilibre familial. Chaque mois, des factures attendent au pays — un abonnement,
+              l’équilibre familial. Chaque mois, des factures attendent au pays : un abonnement,
               un loyer, une inscription universitaire, une hospitalisation.
             </p>
             <p className="mt-4 text-[15px] leading-relaxed text-white/55">

@@ -27,7 +27,7 @@ export function Footer() {
           <div>
             <div className="font-mono text-[10.5px] tracking-[0.14em] text-white/35">CONTACT</div>
             <div className="mt-4 flex flex-col gap-2.5 text-[13.5px] text-white/55">
-              <span>Nîmes, Gard — France</span>
+              <span>Nîmes, Gard, France</span>
               <a href="mailto:contact@diaspopaypro.fr" className="hover:text-white">contact@diaspopaypro.fr</a>
             </div>
           </div>
@@ -41,7 +41,7 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-2 border-t border-white/10 pt-6 font-mono text-[10.5px] text-white/25 sm:flex-row sm:items-center sm:justify-between">
-          <span>DIASPO-PAY® — MARQUE DÉPOSÉE · BREVET INPI FR2606158</span>
+          <span>DIASPO-PAY® · MARQUE DÉPOSÉE · BREVET INPI FR2606158</span>
           <span>SERVICE DE PAIEMENT NON ENCORE OUVERT AU PUBLIC</span>
         </div>
       </div>
