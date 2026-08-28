@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Reveal, Stagger, staggerItem } from '../lib/Reveal'
 import { IconScan, IconReceipt } from './Icons'
+import earthGlow from '../assets/earth-hero-2.avif'
 
 const TRAIL = [1, 0.72, 0.44, 0.22]
 
@@ -33,7 +34,7 @@ export function ComparisonMockup() {
       </div>
 
       <div className="relative flex flex-col items-center gap-7 overflow-hidden border-t border-white/10 bg-gradient-to-br from-[#101b34] to-[#0b1226] p-7 sm:flex-row sm:justify-between md:border-l md:border-t-0 md:p-9">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[var(--color-accent)]/20 blur-[90px]" />
+        <AuroraBackdrop />
 
         <div className="relative">
           <div className="font-mono text-[10.5px] tracking-[0.14em] text-[var(--color-accent-soft)]">AVEC DIASPO-PAY</div>
@@ -47,6 +48,21 @@ export function ComparisonMockup() {
         </div>
       </div>
     </Reveal>
+  )
+}
+
+function AuroraBackdrop() {
+  return (
+    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+      <img
+        src={earthGlow}
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover"
+        style={{ objectPosition: '30% 68%', filter: 'blur(10px)', transform: 'scaleX(-1.3) scaleY(1.3)' }}
+      />
+      <div className="absolute inset-0 bg-[#0b1226]/25" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#101b34]/45 to-[#0b1226]/60" />
+    </div>
   )
 }
 

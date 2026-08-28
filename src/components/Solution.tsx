@@ -2,9 +2,10 @@ import { Reveal, Stagger, staggerItem } from '../lib/Reveal'
 import { motion } from 'framer-motion'
 import {
   IconTv, IconWifi, IconHome, IconHeart, IconCap, IconCompass,
-  IconScan, IconSparkle, IconSend, IconReceipt, IconShield,
+  IconShield,
 } from './Icons'
 import { ComparisonMockup } from './ComparisonMockup'
+import { LogoMark } from './LogoMark'
 
 const USES = [
   { icon: IconTv, title: 'Abonnements audiovisuels', body: 'Canal+, bouquets locaux : réglés directement chez l’opérateur, sans jamais changer d’application.' },
@@ -16,11 +17,36 @@ const USES = [
 ]
 
 const STEPS = [
-  { icon: IconScan, title: 'Scannez la facture', body: 'Photographiez la facture reçue par votre proche, même manuscrite, ou choisissez l’organisme dans l’application.' },
-  { icon: IconSparkle, title: 'L’IA la lit pour vous', body: 'Montant, émetteur, échéance : extraits automatiquement. Vous vérifiez, vous validez, zéro ressaisie.' },
-  { icon: IconSend, title: 'Le paiement part à la source', body: 'L’argent est réglé directement à l’organisme émetteur, jamais sur un compte tiers. C’est le cœur du paiement ciblé.' },
-  { icon: IconReceipt, title: 'Vous recevez la preuve', body: 'Statut, reçu, historique : remontés en temps réel, consultables à tout moment dans l’application.' },
+  { title: 'Scannez la facture', body: 'Photographiez la facture reçue par votre proche, même manuscrite, ou choisissez l’organisme dans l’application.' },
+  { title: 'L’IA la lit pour vous', body: 'Montant, émetteur, échéance : extraits automatiquement. Vous vérifiez, vous validez, zéro ressaisie.' },
+  { title: 'Le paiement part à la source', body: 'L’argent est réglé directement à l’organisme émetteur, jamais sur un compte tiers. C’est le cœur du paiement ciblé.' },
+  { title: 'Vous recevez la preuve', body: 'Statut, reçu, historique : remontés en temps réel, consultables à tout moment dans l’application.' },
 ]
+
+function StepItem({ step, index }: { step: (typeof STEPS)[number]; index: number }) {
+  return (
+    <motion.div variants={staggerItem}>
+      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 font-mono text-[12px] text-[var(--color-accent-soft)]">
+        0{index}
+      </span>
+      <h3 className="mt-4 font-display text-[17px] font-medium text-white">{step.title}</h3>
+      <p className="mt-2 max-w-[30ch] text-[13.5px] leading-relaxed text-white/50">{step.body}</p>
+    </motion.div>
+  )
+}
+
+function StepsPhoneMockup() {
+  return (
+    <div className="relative w-[210px] shrink-0 sm:w-[240px]">
+      <div className="relative aspect-[433/882] rounded-[2.2rem] border-[3px] border-white/15 bg-[#020409] p-[3px] shadow-[0_40px_80px_-24px_rgba(0,0,0,0.7)]">
+        <div className="absolute left-1/2 top-[11px] z-10 h-[16px] w-[64px] -translate-x-1/2 rounded-full bg-black" />
+        <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-[1.9rem] bg-gradient-to-b from-[#101b34] to-[#060912]">
+          <LogoMark size={56} />
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export function Solution() {
   return (
@@ -53,18 +79,21 @@ export function Solution() {
           </h2>
         </Reveal>
 
-        <Stagger className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-4">
-          {STEPS.map((s, i) => (
-            <motion.div key={s.title} variants={staggerItem} className="group relative bg-[#080c17] p-7 transition-colors hover:bg-[#0c1224]">
-              <div className="flex items-center justify-between">
-                <s.icon className="h-6 w-6 text-[var(--color-accent-soft)]" />
-                <span className="font-mono text-[11px] text-white/25">0{i + 1}</span>
-              </div>
-              <h3 className="mt-6 font-display text-[17px] font-medium text-white">{s.title}</h3>
-              <p className="mt-2.5 text-[13.5px] leading-relaxed text-white/50">{s.body}</p>
-            </motion.div>
-          ))}
-        </Stagger>
+        <div className="mt-16 flex flex-col items-center gap-16 lg:flex-row lg:items-center lg:justify-center lg:gap-14">
+          <Stagger className="flex flex-col gap-14">
+            <StepItem step={STEPS[0]} index={1} />
+            <StepItem step={STEPS[1]} index={2} />
+          </Stagger>
+
+          <Reveal delay={0.15} className="shrink-0">
+            <StepsPhoneMockup />
+          </Reveal>
+
+          <Stagger className="flex flex-col gap-14">
+            <StepItem step={STEPS[2]} index={3} />
+            <StepItem step={STEPS[3]} index={4} />
+          </Stagger>
+        </div>
       </div>
 
       {/* Cas d'usage */}
