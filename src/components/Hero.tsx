@@ -20,9 +20,9 @@ export function Hero() {
         >
           <span className="eyebrow">La fintech de la diaspora</span>
           <h1 className="mt-6 max-w-none font-display text-[clamp(40px,7.6vw,80px)] font-[750] leading-[1.04] tracking-[-0.03em] text-white">
-            Les paiements sans frontières
+            La diaspora paie
             <br />
-            <span className="text-[var(--color-accent-soft)]">pour la diaspora</span>
+            sans frontières
           </h1>
           <p className="mt-7 max-w-[52ch] text-[17px] leading-relaxed text-white/60 md:text-[18.5px]">
             Diaspo-Pay règle directement les factures de vos proches à l’étranger : loyer, santé,
