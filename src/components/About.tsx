@@ -15,14 +15,14 @@ export function About() {
                   · DIASPO-PAY · FONDÉ À NÎMES · GARD · FRANCE ·
                 </textPath>
               </text>
-              <text x="100" y="94" textAnchor="middle" fill="#f4f5f8" fontFamily="Fraunces" fontSize="17" fontStyle="italic">E.K.</text>
+              <text x="100" y="94" textAnchor="middle" fill="#f4f5f8" fontFamily="Geist" fontWeight="700" fontSize="16">E.K.</text>
               <text x="100" y="114" textAnchor="middle" fill="#7fb0ff" fontFamily="IBM Plex Mono" fontSize="8">FONDATEUR</text>
             </svg>
           </Reveal>
 
           <Reveal delay={0.1}>
             <span className="eyebrow">Le mot du fondateur</span>
-            <blockquote className="mt-5 font-display text-[clamp(22px,3vw,32px)] italic leading-[1.3] text-white/90">
+            <blockquote className="mt-5 font-accent text-[clamp(24px,3.4vw,36px)] leading-[1.3] text-white/90">
               « Aider un proche, ce n’est pas seulement envoyer une somme. C’est s’assurer que
               l’échéance est réglée, et que la valeur reste dans l’économie du pays. »
             </blockquote>

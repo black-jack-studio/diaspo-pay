@@ -43,13 +43,13 @@ export function Solution() {
         <Reveal delay={0.1} className="mt-14 grid overflow-hidden rounded-2xl border border-white/10 md:grid-cols-2">
           <div className="bg-white/[0.02] p-8 md:p-10">
             <div className="font-mono text-[10.5px] tracking-[0.14em] text-white/35">AUJOURD’HUI</div>
-            <p className="mt-4 font-display text-[20px] italic leading-snug text-white/70">
+            <p className="mt-4 font-accent text-[22px] leading-snug text-white/70">
               Vous envoyez une somme. Le suivi s’arrête à la remise.
             </p>
           </div>
           <div className="border-t border-white/10 bg-gradient-to-br from-[#101b34] to-[#0b1226] p-8 md:border-l md:border-t-0 md:p-10">
             <div className="font-mono text-[10.5px] tracking-[0.14em] text-[var(--color-accent-soft)]">AVEC DIASPO-PAY</div>
-            <p className="mt-4 font-display text-[20px] italic leading-snug text-white">
+            <p className="mt-4 font-accent text-[22px] leading-snug text-white">
               Vous choisissez la facture. Elle est réglée à sa source — vous recevez la preuve.
             </p>
           </div>

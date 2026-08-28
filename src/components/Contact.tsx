@@ -33,7 +33,7 @@ export function Contact() {
           <Reveal delay={0.1} className="rounded-2xl border border-white/10 bg-white/[0.02] p-7 md:p-10">
             {sent ? (
               <div className="flex flex-col items-start gap-3 py-10">
-                <span className="font-display text-[24px] italic text-white">C’est noté.</span>
+                <span className="font-accent text-[28px] text-white">C’est noté.</span>
                 <p className="max-w-[42ch] text-[14.5px] leading-relaxed text-white/55">
                   Votre message est bien arrivé à l’équipe Diaspo-Pay. Vous serez prévenu dès
                   l’ouverture — et recontacté directement si votre demande l’exige.

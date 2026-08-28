@@ -20,10 +20,10 @@ export function Hero() {
           className="max-w-3xl"
         >
           <span className="eyebrow">La fintech de la diaspora</span>
-          <h1 className="mt-5 text-[clamp(40px,9vw,76px)] leading-[0.98] font-normal text-white">
+          <h1 className="mt-5 font-display text-[clamp(40px,8.4vw,76px)] font-[750] leading-[0.98] tracking-[-0.03em] text-white">
             Votre aide arrive.
             <br />
-            <span className="italic text-white/90">Vous le savez.</span>
+            Vous le savez.
           </h1>
           <p className="mt-7 max-w-[52ch] text-[17px] leading-relaxed text-white/60 md:text-[18.5px]">
             Diaspo-Pay règle directement les factures de vos proches — loyer, santé, scolarité,
