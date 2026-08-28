@@ -1,37 +1,32 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import earthHero from '../assets/earth-hero.jpg'
 
-type Star = { x: number; y: number; size: number; delay: number; duration: number; bright: boolean }
+type Star = { x: number; y: number; size: number; delay: number; duration: number }
 
 function useStars(count: number): Star[] {
   return useMemo(
     () =>
-      Array.from({ length: count }, () => {
-        const bright = Math.random() < 0.12
-        return {
-          x: Math.random() * 100,
-          y: Math.random() * 62,
-          size: bright ? 1.6 + Math.random() * 1.4 : 0.6 + Math.random() * 1.1,
-          delay: Math.random() * 6,
-          duration: 3 + Math.random() * 4,
-          bright,
-        }
-      }),
+      Array.from({ length: count }, () => ({
+        x: Math.random() * 100,
+        y: Math.random() * 34,
+        size: 1 + Math.random() * 1.6,
+        delay: Math.random() * 6,
+        duration: 3 + Math.random() * 4,
+      })),
     [count],
   )
 }
 
 export function SpaceScene() {
-  const stars = useStars(160)
+  const stars = useStars(50)
   const mx = useMotionValue(0)
   const my = useMotionValue(0)
   const sx = useSpring(mx, { stiffness: 35, damping: 18, mass: 0.6 })
   const sy = useSpring(my, { stiffness: 35, damping: 18, mass: 0.6 })
 
-  const planetX = useTransform(sx, (v) => v * -16)
-  const planetY = useTransform(sy, (v) => v * -9)
-  const starX = useTransform(sx, (v) => v * -30)
-  const starY = useTransform(sy, (v) => v * -18)
+  const imgX = useTransform(sx, (v) => v * -10)
+  const imgY = useTransform(sy, (v) => v * -6)
 
   const ref = useRef<HTMLDivElement>(null)
 
@@ -48,16 +43,20 @@ export function SpaceScene() {
   }, [mx, my])
 
   return (
-    <div ref={ref} className="absolute inset-0 overflow-hidden bg-[var(--color-bg)]">
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(140% 90% at 50% 0%, #0a1224 0%, #060911 46%, #030509 100%)',
-        }}
+    <div ref={ref} className="absolute inset-0 overflow-hidden bg-black">
+      <motion.img
+        src={earthHero}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover"
+        style={{ x: imgX, y: imgY, objectPosition: 'center 32%' }}
+        initial={{ scale: 1.14 }}
+        animate={{ scale: [1.14, 1.22, 1.14] }}
+        transition={{ duration: 34, repeat: Infinity, ease: 'easeInOut' }}
       />
 
-      <motion.div className="absolute inset-0" style={{ x: starX, y: starY }}>
+      {/* extra twinkle accents, confined to the black upper band */}
+      <div className="absolute inset-0">
         {stars.map((s, i) => (
           <span
             key={i}
@@ -67,47 +66,25 @@ export function SpaceScene() {
               top: `${s.y}%`,
               width: s.size,
               height: s.size,
-              boxShadow: s.bright ? '0 0 6px 1px rgba(180,205,255,0.7)' : undefined,
               animation: `twinkle ${s.duration}s ease-in-out infinite`,
               animationDelay: `${s.delay}s`,
             }}
           />
         ))}
-      </motion.div>
+      </div>
 
+      {/* legibility scrim: light over the black sky, heavy by the time we reach the bright clouds */}
       <div
-        className="absolute left-1/2 -bottom-[46vw] md:-bottom-[34vw] h-[100vw] w-[100vw] md:h-[64vw] md:w-[64vw] -translate-x-1/2 rounded-full blur-3xl opacity-50"
-        style={{ background: 'radial-gradient(circle, rgba(76,141,255,0.55), rgba(76,141,255,0) 68%)' }}
-        aria-hidden="true"
-      />
-
-      <motion.div
-        className="absolute left-1/2 -bottom-[42vw] md:-bottom-[30vw] h-[92vw] w-[92vw] md:h-[56vw] md:w-[56vw] -translate-x-1/2 rounded-full"
+        className="absolute inset-0"
         style={{
-          x: planetX,
-          y: planetY,
-          animation: 'drift 22s ease-in-out infinite',
           background:
-            'radial-gradient(circle at 36% 26%, #2a4a80 0%, #182a52 24%, #0e1c3a 44%, #081326 66%, #030509 100%)',
-          boxShadow:
-            '0 -8px 90px 10px rgba(120,170,255,0.28), inset -50px -36px 130px rgba(0,0,0,0.6), inset 22px 14px 100px rgba(150,190,255,0.14)',
+            'linear-gradient(180deg, rgba(3,5,10,0.55) 0%, rgba(3,5,10,0.30) 22%, rgba(3,6,13,0.42) 42%, rgba(3,6,14,0.72) 62%, rgba(2,4,10,0.92) 82%, rgba(2,4,10,0.98) 100%)',
         }}
-        aria-hidden="true"
-      >
-        <div className="absolute inset-0 overflow-hidden rounded-full opacity-70 mix-blend-screen">
-          <div
-            className="absolute top-[8%] left-[16%] h-[38%] w-[46%] rounded-full blur-2xl"
-            style={{ background: 'radial-gradient(circle, rgba(130,180,255,0.35), transparent 70%)' }}
-          />
-          <div
-            className="absolute top-[32%] left-[48%] h-[30%] w-[40%] rounded-full blur-2xl"
-            style={{ background: 'radial-gradient(circle, rgba(160,205,255,0.2), transparent 70%)' }}
-          />
-        </div>
-        <div className="absolute -inset-px rounded-full" style={{ boxShadow: 'inset 0 0 0 1px rgba(150,190,255,0.22)' }} />
-      </motion.div>
-
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--color-bg)]/0" />
+      />
+      <div
+        className="absolute inset-x-0 bottom-0 h-40"
+        style={{ background: 'linear-gradient(180deg, rgba(2,4,10,0) 0%, rgba(2,4,10,1) 100%)' }}
+      />
     </div>
   )
 }
