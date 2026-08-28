@@ -4,6 +4,7 @@ import { Solution } from './components/Solution'
 import { Investors } from './components/Investors'
 import { Careers } from './components/Careers'
 import { About } from './components/About'
+import { Faq } from './components/Faq'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 
@@ -17,6 +18,7 @@ function App() {
         <Investors />
         <Careers />
         <About />
+        <Faq />
         <Contact />
       </main>
       <Footer />

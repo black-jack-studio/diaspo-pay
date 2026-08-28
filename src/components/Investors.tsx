@@ -1,14 +1,6 @@
 import { motion } from 'framer-motion'
 import { Reveal, Stagger, staggerItem } from '../lib/Reveal'
 import { Counter } from '../lib/Counter'
-import { IconShield } from './Icons'
-
-const VALUE = [
-  'Paiement ciblé : la facture réelle, réglée chez l’organisme émetteur.',
-  'Traçabilité de bout en bout, avec reçu et historique consultables.',
-  'Lecture de factures assistée par IA, y compris manuscrites.',
-  'Investissement direct au pays, sans intermédiaire opaque.',
-]
 
 const TIMELINE = [
   { tag: 'Mi-octobre', title: 'Lancement de l’application', body: 'Première version disponible pour les utilisateurs pré-inscrits.' },
@@ -49,35 +41,6 @@ export function Investors() {
             <div className="mt-3 font-mono text-[10.5px] text-white/30">SOURCE · BANQUE MONDIALE, 2024</div>
           </div>
         </Reveal>
-
-        <div className="mt-16 grid gap-12 lg:grid-cols-2 lg:gap-20">
-          <Reveal>
-            <h3 className="font-display text-[20px] font-medium text-white">Proposition de valeur</h3>
-            <ul className="mt-6 space-y-4">
-              {VALUE.map((v) => (
-                <li key={v} className="flex gap-3 text-[15px] leading-relaxed text-white/60">
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[var(--color-accent)]" />
-                  {v}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-
-          <Reveal delay={0.1} className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 md:p-9">
-            <IconShield className="h-7 w-7 text-[var(--color-accent-soft)]" />
-            <h3 className="mt-5 font-display text-[19px] font-medium text-white">Innovation protégée</h3>
-            <ul className="mt-4 space-y-2.5 text-[14.5px] leading-relaxed text-white/55">
-              <li>Marque Diaspo-Pay déposée.</li>
-              <li>Brevet déposé, INPI FR2606158.</li>
-              <li>Démarches d’extension internationale en cours.</li>
-            </ul>
-            <p className="mt-5 border-t border-white/10 pt-5 text-[13.5px] leading-relaxed text-white/40">
-              Modèle économique : commission proportionnelle appliquée à la facture réglée. Les
-              éléments financiers détaillés sont présentés en rendez-vous, dans un cadre adapté à
-              une due diligence.
-            </p>
-          </Reveal>
-        </div>
 
         <div className="mt-24">
           <Reveal>

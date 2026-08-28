@@ -2,18 +2,18 @@ import { Reveal, Stagger, staggerItem } from '../lib/Reveal'
 import { motion } from 'framer-motion'
 import {
   IconTv, IconWifi, IconHome, IconHeart, IconCap, IconCompass,
-  IconShield,
 } from './Icons'
 import { ComparisonMockup } from './ComparisonMockup'
 import { LogoMark } from './LogoMark'
+import UseCaseFan from './UseCaseFan'
 
 const USES = [
-  { icon: IconTv, title: 'Abonnements audiovisuels', body: 'Canal+, bouquets locaux : réglés directement chez l’opérateur, sans jamais changer d’application.' },
-  { icon: IconWifi, title: 'Internet & mobile', body: 'Forfaits rechargés à échéance, pour que la ligne d’un proche ne coupe jamais au mauvais moment.' },
-  { icon: IconHome, title: 'Loyer & charges', body: 'Le loyer payé à date, avec un justificatif conservé de votre côté, chaque mois, sans y penser.' },
-  { icon: IconHeart, title: 'Santé & hospitalisation', body: 'Frais médicaux et cotisations d’assurance pris en charge dans l’instant, même en urgence familiale.' },
-  { icon: IconCap, title: 'Frais de scolarité', body: 'Le règlement part directement à l’université : vous savez que l’inscription est confirmée.' },
-  { icon: IconCompass, title: 'Réservations & services', body: 'Hôtel, location, taxi, avance immobilière : préparés depuis l’étranger, sans intermédiaire opaque.' },
+  { icon: IconTv, title: 'Abonnements audiovisuels' },
+  { icon: IconWifi, title: 'Internet & mobile' },
+  { icon: IconHome, title: 'Loyer & charges' },
+  { icon: IconHeart, title: 'Santé & hospitalisation' },
+  { icon: IconCap, title: 'Frais de scolarité' },
+  { icon: IconCompass, title: 'Réservations & services' },
 ]
 
 const STEPS = [
@@ -26,7 +26,7 @@ const STEPS = [
 function StepItem({ step, index }: { step: (typeof STEPS)[number]; index: number }) {
   return (
     <motion.div variants={staggerItem}>
-      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 font-mono text-[12px] text-[var(--color-accent-soft)]">
+      <span className="font-mono text-[13px] text-[var(--color-accent-soft)]">
         0{index}
       </span>
       <h3 className="mt-4 font-display text-[17px] font-medium text-white">{step.title}</h3>
@@ -98,67 +98,20 @@ export function Solution() {
 
       {/* Cas d'usage */}
       <div className="mx-auto mt-32 max-w-[1180px] px-6 md:px-8">
-        <Reveal className="max-w-xl">
-          <span className="eyebrow">Cas d’usage</span>
-          <h2 className="mt-4 text-[clamp(26px,3.4vw,38px)] leading-[1.1] text-white">
-            Les dépenses du quotidien, prises en charge à la source.
-          </h2>
-        </Reveal>
-
-        <Stagger className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {USES.map((u) => (
-            <motion.div
-              key={u.title}
-              variants={staggerItem}
-              className="rounded-2xl border border-white/10 bg-white/[0.02] p-7 transition-colors hover:border-white/20 hover:bg-white/[0.04]"
-            >
-              <u.icon className="h-6 w-6 text-[var(--color-accent-soft)]" />
-              <h3 className="mt-5 font-display text-[16.5px] font-medium text-white">{u.title}</h3>
-              <p className="mt-2 text-[13.5px] leading-relaxed text-white/50">{u.body}</p>
-            </motion.div>
-          ))}
-        </Stagger>
-      </div>
-
-      {/* IA + sécurité */}
-      <div className="mx-auto mt-32 max-w-[1180px] px-6 md:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-          <Reveal>
-            <span className="eyebrow">Le rôle de l’intelligence artificielle</span>
-            <h2 className="mt-4 text-[clamp(22px,2.6vw,30px)] leading-[1.15] text-white">
-              Même une facture écrite à la main, elle sait la lire.
+        <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+          <Reveal className="max-w-md lg:shrink-0">
+            <span className="eyebrow">Cas d’usage</span>
+            <h2 className="mt-4 text-[clamp(26px,3.4vw,38px)] leading-[1.1] text-white">
+              Les dépenses du quotidien, prises en charge à la source.
             </h2>
-            <p className="mt-5 max-w-[52ch] text-[15px] leading-relaxed text-white/55">
-              Beaucoup d’établissements au pays n’ont pas de facturation numérique. Diaspo-Pay
-              intègre une lecture assistée par IA capable d’interpréter une facture photographiée,
-              y compris manuscrite, pour en extraire l’organisme, la référence et le montant dû.
-              Vous vérifiez toujours avant de valider. L’IA accélère, elle ne décide jamais à
-              votre place.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-2">
-              {['Facture imprimée', 'Facture manuscrite', 'Référence client', 'Montant dû'].map((t) => (
-                <span key={t} className="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 font-mono text-[11px] tracking-wide text-white/50">
-                  {t}
-                </span>
-              ))}
-            </div>
           </Reveal>
 
-          <Reveal delay={0.1} className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 md:p-9">
-            <IconShield className="h-7 w-7 text-[var(--color-accent-soft)]" />
-            <h3 className="mt-5 font-display text-[19px] font-medium text-white">Sécurité & conformité</h3>
-            <p className="mt-3 text-[14.5px] leading-relaxed text-white/55">
-              Diaspo-Pay est une fintech en cours de lancement. Avant toute ouverture au public,
-              le dispositif de conformité est finalisé : vérification d’identité (KYC), contrôle
-              de la licéité des opérations et lutte contre le blanchiment (AML).
-            </p>
-            <p className="mt-3 text-[14.5px] leading-relaxed text-white/55">
-              Aucune opération de paiement n’est proposée sur ce site : il présente la solution et
-              permet de se pré-inscrire. Aucune donnée bancaire n’est collectée ici.
-            </p>
+          <Reveal delay={0.1}>
+            <UseCaseFan items={USES} />
           </Reveal>
         </div>
       </div>
+
     </section>
   )
 }
