@@ -20,7 +20,7 @@ export function Hero() {
         >
           <span className="eyebrow">La fintech de la diaspora</span>
           <h1 className="mt-6 max-w-none font-display text-[clamp(40px,7.6vw,80px)] font-[750] leading-[1.04] tracking-[-0.03em] text-white">
-            Payez vos proches,
+            Aidez vos proches,
             <br />
             sans frontières
           </h1>
