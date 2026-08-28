@@ -12,15 +12,14 @@ export function Hero() {
     <section id="accueil" className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden pt-32">
       <SpaceScene />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1180px] px-6 pb-20 md:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-[1500px] px-6 pb-20 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-5xl"
         >
           <span className="eyebrow">La fintech de la diaspora</span>
-          <h1 className="mt-5 font-display text-[clamp(32px,5.2vw,50px)] font-[750] leading-[1.06] tracking-[-0.025em] text-white">
+          <h1 className="mt-5 max-w-none font-display text-[clamp(40px,7.6vw,80px)] font-[750] leading-[1.02] tracking-[-0.03em] text-white">
             Les paiements sans frontières
             <br />
             pour la diaspora
