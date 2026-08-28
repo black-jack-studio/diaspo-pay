@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import earthHero from '../assets/earth-hero.jpg'
+import earthHero from '../assets/earth-hero-2.avif'
 
 type Star = { x: number; y: number; size: number; delay: number; duration: number }
 
@@ -8,8 +8,8 @@ function useStars(count: number): Star[] {
   return useMemo(
     () =>
       Array.from({ length: count }, () => ({
-        x: Math.random() * 100,
-        y: Math.random() * 34,
+        x: 40 + Math.random() * 60,
+        y: Math.random() * 55,
         size: 1 + Math.random() * 1.6,
         delay: Math.random() * 6,
         duration: 3 + Math.random() * 4,
@@ -19,7 +19,7 @@ function useStars(count: number): Star[] {
 }
 
 export function SpaceScene() {
-  const stars = useStars(50)
+  const stars = useStars(45)
   const mx = useMotionValue(0)
   const my = useMotionValue(0)
   const sx = useSpring(mx, { stiffness: 35, damping: 18, mass: 0.6 })
@@ -49,13 +49,13 @@ export function SpaceScene() {
         alt=""
         aria-hidden="true"
         className="absolute inset-0 h-full w-full object-cover"
-        style={{ x: imgX, y: imgY, objectPosition: 'center 32%' }}
-        initial={{ scale: 1.14 }}
-        animate={{ scale: [1.14, 1.22, 1.14] }}
+        style={{ x: imgX, y: imgY, objectPosition: '68% 78%', filter: 'blur(2.5px)' }}
+        initial={{ scaleX: -1.14, scaleY: 1.14 }}
+        animate={{ scaleX: [-1.14, -1.22, -1.14], scaleY: [1.14, 1.22, 1.14] }}
         transition={{ duration: 34, repeat: Infinity, ease: 'easeInOut' }}
       />
 
-      {/* extra twinkle accents, confined to the black upper band */}
+      {/* extra twinkle accents, over the clear black span of sky */}
       <div className="absolute inset-0">
         {stars.map((s, i) => (
           <span
@@ -73,12 +73,19 @@ export function SpaceScene() {
         ))}
       </div>
 
-      {/* legibility scrim: light over the black sky, heavy by the time we reach the bright clouds */}
+      {/* legibility scrim: protects the left text column and the bottom transition */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(180deg, rgba(3,5,10,0.55) 0%, rgba(3,5,10,0.30) 22%, rgba(3,6,13,0.42) 42%, rgba(3,6,14,0.72) 62%, rgba(2,4,10,0.92) 82%, rgba(2,4,10,0.98) 100%)',
+            'linear-gradient(100deg, rgba(2,4,10,0.9) 0%, rgba(2,4,10,0.72) 26%, rgba(2,4,10,0.28) 48%, rgba(2,4,10,0.08) 64%, rgba(2,4,10,0.2) 100%)',
+        }}
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(2,4,10,0.15) 0%, rgba(2,4,10,0.08) 30%, rgba(2,4,10,0.5) 70%, rgba(2,4,10,0.88) 100%)',
         }}
       />
       <div
