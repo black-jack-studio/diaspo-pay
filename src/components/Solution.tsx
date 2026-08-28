@@ -98,7 +98,7 @@ export function Solution() {
 
       {/* Cas d'usage */}
       <div className="mx-auto mt-32 max-w-[1180px] px-6 md:px-8">
-        <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+        <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-center lg:gap-16">
           <Reveal className="max-w-md lg:shrink-0">
             <span className="eyebrow">Cas d’usage</span>
             <h2 className="mt-4 text-[clamp(26px,3.4vw,38px)] leading-[1.1] text-white">
