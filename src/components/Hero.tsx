@@ -17,13 +17,13 @@ export function Hero() {
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-3xl"
+          className="max-w-5xl"
         >
           <span className="eyebrow">La fintech de la diaspora</span>
-          <h1 className="mt-5 font-display text-[clamp(40px,8.4vw,76px)] font-[750] leading-[0.98] tracking-[-0.03em] text-white">
-            Le paiement sans frontières
+          <h1 className="mt-5 font-display text-[clamp(32px,5.2vw,50px)] font-[750] leading-[1.06] tracking-[-0.025em] text-white">
+            Les paiements sans frontières
             <br />
-            pour la diaspora.
+            pour la diaspora
           </h1>
           <p className="mt-7 max-w-[52ch] text-[17px] leading-relaxed text-white/60 md:text-[18.5px]">
             Diaspo-Pay règle directement les factures de vos proches à l’étranger : loyer, santé,
