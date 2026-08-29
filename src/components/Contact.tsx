@@ -122,17 +122,17 @@ export function Contact({
               )}
             </Reveal>
 
-            <Reveal delay={0.18} className="space-y-4">
-              <div className="rounded-2xl border border-black/10 bg-black/[0.02] p-7">
+            <Reveal delay={0.18} className="space-y-3">
+              <div className="rounded-2xl border border-black/10 bg-black/[0.02] p-6">
                 <div className="font-mono text-[10.5px] tracking-[0.14em] text-black/40">COORDONNÉES</div>
-                <div className="mt-4 space-y-2 text-[14.5px] text-[#0a0f1c]/70">
+                <div className="mt-3 space-y-2 text-[14.5px] text-[#0a0f1c]/70">
                   <a href="mailto:contact@diaspopaypro.fr" className="block hover:text-[#0a0f1c]">contact@diaspopaypro.fr</a>
                   <span className="block text-[#0a0f1c]/50">Nîmes, Gard, France</span>
                 </div>
               </div>
-              <div className="rounded-2xl border border-black/10 bg-black/[0.02] p-7">
+              <div className="rounded-2xl border border-black/10 bg-black/[0.02] p-6">
                 <div className="font-mono text-[10.5px] tracking-[0.14em] text-black/40">RÉSEAUX</div>
-                <div className="mt-4 flex flex-col gap-2 text-[14.5px] text-[#0a0f1c]/70">
+                <div className="mt-3 flex flex-col gap-2 text-[14.5px] text-[#0a0f1c]/70">
                   <a href="https://wa.me/33652406073" target="_blank" rel="noreferrer" className="hover:text-[#0a0f1c]">WhatsApp →</a>
                   <a href="https://www.linkedin.com/in/eric-koffounda-871b04124/" target="_blank" rel="noreferrer" className="hover:text-[#0a0f1c]">LinkedIn →</a>
                 </div>
