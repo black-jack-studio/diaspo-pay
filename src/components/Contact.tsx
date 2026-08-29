@@ -51,20 +51,20 @@ export function Contact({
   }
 
   return (
-    <section id="contact" className="relative border-t border-white/[0.06] bg-[#040610] py-28 md:py-36">
+    <section id="contact" className="relative border-t border-white/[0.06] bg-[#040610] py-20 md:py-28">
       <div className="mx-auto max-w-[1180px] px-6 md:px-8">
-        <div className="rounded-[32px] bg-white p-8 sm:p-12 md:p-16">
+        <div className="rounded-[32px] bg-white p-8 sm:p-10 md:p-12">
           <Reveal className="max-w-2xl">
             <span className="eyebrow" style={{ color: 'var(--color-accent-deep)' }}>{eyebrow}</span>
-            <h2 className="mt-4 text-[clamp(28px,4.4vw,50px)] leading-[1.06] text-[#0a0f1c]">
+            <h2 className="mt-3 text-[clamp(26px,3.6vw,42px)] leading-[1.06] text-[#0a0f1c]">
               {title}
             </h2>
-            <p className="mt-6 max-w-[54ch] text-[16.5px] leading-relaxed text-[#0a0f1c]/60">
+            <p className="mt-4 max-w-[54ch] text-[15.5px] leading-relaxed text-[#0a0f1c]/60">
               {description}
             </p>
           </Reveal>
 
-          <div className="mt-16 grid gap-8 lg:grid-cols-[1.3fr_1fr] lg:gap-12">
+          <div className="mt-10 grid gap-8 lg:grid-cols-[1.3fr_1fr] lg:gap-12">
             <Reveal delay={0.1} className="rounded-2xl border border-black/10 bg-black/[0.02] p-7 md:p-10">
               {sent ? (
                 <div className="flex flex-col items-start gap-3 py-10">
