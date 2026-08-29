@@ -8,12 +8,12 @@ import { LogoMark } from './LogoMark'
 import UseCaseFan from './UseCaseFan'
 
 const USES = [
-  { icon: IconTv, title: 'Abonnements audiovisuels' },
-  { icon: IconWifi, title: 'Internet & mobile' },
-  { icon: IconHome, title: 'Loyer & charges' },
-  { icon: IconHeart, title: 'Santé & hospitalisation' },
-  { icon: IconCap, title: 'Frais de scolarité' },
-  { icon: IconCompass, title: 'Réservations & services' },
+  { icon: IconTv, title: 'Abonnements audiovisuels', color: '#a78bfa' },
+  { icon: IconWifi, title: 'Internet & mobile', color: '#7fb0ff' },
+  { icon: IconHome, title: 'Loyer & charges', color: '#e8a54b' },
+  { icon: IconHeart, title: 'Santé & hospitalisation', color: '#fb7185' },
+  { icon: IconCap, title: 'Frais de scolarité', color: '#34d399' },
+  { icon: IconCompass, title: 'Réservations & services', color: '#fb923c' },
 ]
 
 const STEPS = [
@@ -98,7 +98,7 @@ export function Solution() {
 
       {/* Cas d'usage */}
       <div className="mx-auto mt-32 max-w-[1180px] px-6 md:px-8">
-        <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-center lg:gap-16">
+        <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-start lg:gap-14">
           <Reveal className="max-w-md lg:shrink-0">
             <span className="eyebrow">Cas d’usage</span>
             <h2 className="mt-4 text-[clamp(26px,3.4vw,38px)] leading-[1.1] text-white">

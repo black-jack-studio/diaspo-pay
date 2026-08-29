@@ -80,6 +80,49 @@ h1, h2, h3 {
   color: #a9cbff;
 }
 
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes glow-border-spin {
+  to { --border-angle: 360deg; }
+}
+
+.glow-border {
+  position: relative;
+}
+
+.glow-border::before,
+.glow-border::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--border-angle),
+    #a78bfa, #7fb0ff, #34d399, #fb923c, #fb7185, #a78bfa
+  );
+  animation: glow-border-spin 6s linear infinite;
+  pointer-events: none;
+}
+
+.glow-border::before {
+  padding: 1.5px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
+}
+
+.glow-border::after {
+  inset: -10px;
+  filter: blur(16px);
+  opacity: 0.55;
+  z-index: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {

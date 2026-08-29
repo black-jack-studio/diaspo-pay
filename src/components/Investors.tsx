@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { Reveal, Stagger, staggerItem } from '../lib/Reveal'
-import { Counter } from '../lib/Counter'
 
 const TIMELINE = [
   { tag: 'Mi-octobre', title: 'Lancement de l’application', body: 'Première version disponible pour les utilisateurs pré-inscrits.' },
@@ -23,23 +22,6 @@ export function Investors() {
             besoin non couvert est ailleurs : s’assurer que la dépense visée a bien été réglée.
             Diaspo-Pay adresse ce manque avec une innovation protégée.
           </p>
-        </Reveal>
-
-        <Reveal delay={0.1} className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2">
-          <div className="bg-[#080c17] p-10 md:p-12">
-            <div className="font-mono text-[11px] tracking-[0.14em] text-white/35">FLUX ANNUEL DIASPORA → AFRIQUE</div>
-            <div className="mt-4 font-display text-[clamp(48px,7vw,88px)] leading-none text-white">
-              <Counter to={100} /> <span className="text-[var(--color-accent-soft)]">Md€</span>
-            </div>
-            <div className="mt-3 font-mono text-[10.5px] text-white/30">SOURCE · BANQUE MONDIALE, 2024</div>
-          </div>
-          <div className="bg-[#080c17] p-10 md:p-12">
-            <div className="font-mono text-[11px] tracking-[0.14em] text-white/35">PART DU PIB AFRICAIN</div>
-            <div className="mt-4 font-display text-[clamp(48px,7vw,88px)] leading-none text-white">
-              <Counter to={6} suffix="%" />
-            </div>
-            <div className="mt-3 font-mono text-[10.5px] text-white/30">SOURCE · BANQUE MONDIALE, 2024</div>
-          </div>
         </Reveal>
 
         <div className="mt-24">

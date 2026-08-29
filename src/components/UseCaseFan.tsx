@@ -6,6 +6,7 @@ import gsap from 'gsap'
 export interface UseCaseItem {
   icon: React.ComponentType<{ className?: string }>
   title: string
+  color: string
 }
 
 interface UseCaseFanProps {
@@ -16,9 +17,9 @@ const MAX_VISIBLE = 3
 const HALF = 1
 
 const FAN_POSITIONS = [
-  { rot: -10, scale: 0.88, x: -8, y: 0.7, zIndex: 1 },
+  { rot: -10, scale: 0.76, x: -6.5, y: 1.3, zIndex: 1 },
   { rot: 0, scale: 1.0, x: 0, y: 0, zIndex: 10 },
-  { rot: 10, scale: 0.88, x: 8, y: 0.7, zIndex: 1 },
+  { rot: 10, scale: 0.76, x: 6.5, y: 1.3, zIndex: 1 },
 ]
 
 function getResponsiveMultiplier(width: number) {
@@ -35,11 +36,15 @@ function getSlotConfig(totalCards: number, slot: number) {
   const absDistance = Math.abs(distance)
   return {
     rot: distance * 10,
-    scale: 1.0 - 0.12 * absDistance * absDistance,
-    x: distance * 8,
-    y: absDistance * absDistance * 0.7,
+    scale: 1.0 - 0.24 * absDistance * absDistance,
+    x: distance * 6.5,
+    y: absDistance * absDistance * 1.3,
     zIndex: 10 - Math.abs(slot - center),
   }
+}
+
+function getBrightness(zIndex: number) {
+  return zIndex >= 10 ? 1.08 : Math.max(0.32, 0.32 + zIndex * 0.06)
 }
 
 const ARROW_CLASSES =
@@ -48,9 +53,17 @@ const ARROW_CLASSES =
 function UseCaseCard({ item }: { item: UseCaseItem }) {
   const Icon = item.icon
   return (
-    <div className="flex h-[128px] w-[136px] flex-col items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center shadow-[0_12px_32px_-16px_rgba(0,0,0,0.6)] sm:h-[136px] sm:w-[148px]">
-      <Icon className="h-6 w-6 text-[var(--color-accent-soft)]" />
-      <h3 className="font-display text-[12.5px] font-medium leading-tight text-white">{item.title}</h3>
+    <div className="glow-border h-[152px] w-[164px] rounded-2xl sm:h-[168px] sm:w-[184px]">
+      <div className="relative z-[2] flex h-full w-full flex-col items-center justify-center gap-3 overflow-hidden rounded-2xl bg-[#0e1119] p-4 text-center shadow-[0_12px_32px_-16px_rgba(0,0,0,0.7)]">
+        <div
+          className="pointer-events-none absolute -right-8 -top-10 h-28 w-28 rounded-full blur-2xl"
+          style={{ background: item.color, opacity: 0.35 }}
+        />
+        <div className="relative" style={{ color: item.color }}>
+          <Icon className="h-7 w-7" />
+        </div>
+        <h3 className="relative font-display text-[14px] font-medium leading-tight text-white">{item.title}</h3>
+      </div>
     </div>
   )
 }
@@ -123,6 +136,7 @@ export default function UseCaseFan({ items }: UseCaseFanProps) {
           scale,
           opacity: 1,
           zIndex,
+          filter: `brightness(${getBrightness(zIndex)})`,
         }
 
         if (isFirstMount) {
@@ -151,102 +165,7 @@ export default function UseCaseFan({ items }: UseCaseFanProps) {
       if (isFirstMount) hasEntered.current = true
     }, unlockDelay)
 
-    // Hover interactions
-    const visibleEntries: { el: HTMLElement; slot: number }[] = []
-    cardElements.forEach((el, i) => {
-      const slot = visibleMap.get(i)
-      if (slot !== undefined) visibleEntries.push({ el, slot })
-    })
-    visibleEntries.sort((a, b) => a.slot - b.slot)
-
-    let activeSlot: number | null = null
-    let leaveTimer: ReturnType<typeof setTimeout> | null = null
-    const centerSlot = visibleEntries.length >> 1
-
-    const updateHoverLayout = (hoveredSlot: number | null) => {
-      const mult = getResponsiveMultiplier(window.innerWidth)
-
-      visibleEntries.forEach(({ el, slot }) => {
-        const base = config(slot)
-        let targetX = base.x * mult
-        let targetY = base.y * mult
-        let targetRot = base.rot
-        let targetScale = base.scale
-        let delay = 0
-
-        if (hoveredSlot !== null) {
-          const distance = Math.abs(slot - hoveredSlot)
-          delay = distance * 0.02
-
-          if (slot === hoveredSlot) {
-            targetY -= 0.9 * mult
-            targetScale *= 1.08
-          } else {
-            const normalized = centerSlot > 0 ? (slot - centerSlot) / centerSlot : 0
-            const pushStrength = 2.6 * (1 - Math.abs(normalized)) * (1 + 0.2 * Math.max(0, 3 - distance))
-
-            if (slot < hoveredSlot) {
-              targetX -= pushStrength * mult
-              targetRot -= 3 / (distance + 1)
-            } else {
-              targetX += pushStrength * mult
-              targetRot += 3 / (distance + 1)
-            }
-          }
-        } else {
-          delay = Math.abs(slot - centerSlot) * 0.02
-        }
-
-        gsap.to(el, {
-          x: `${targetX}rem`,
-          y: `${targetY}rem`,
-          rotation: targetRot,
-          scale: targetScale,
-          duration: 0.5,
-          delay,
-          ease: 'elastic.out(1,.75)',
-          overwrite: 'auto',
-        })
-        gsap.set(el, { zIndex: base.zIndex })
-      })
-    }
-
-    const enterHandlers = visibleEntries.map(({ el, slot }) => {
-      const handler = () => {
-        if (isAnimating.current) return
-        if (leaveTimer) {
-          clearTimeout(leaveTimer)
-          leaveTimer = null
-        }
-        if (activeSlot !== slot) {
-          activeSlot = slot
-          updateHoverLayout(slot)
-        }
-      }
-      el.addEventListener('mouseenter', handler)
-      return { el, handler }
-    })
-
-    const onMouseLeave = () => {
-      if (isAnimating.current) return
-      if (leaveTimer) clearTimeout(leaveTimer)
-      leaveTimer = setTimeout(() => {
-        activeSlot = null
-        updateHoverLayout(null)
-      }, 50)
-    }
-    container.addEventListener('mouseleave', onMouseLeave)
-
-    const onResize = () => {
-      if (!isAnimating.current) updateHoverLayout(activeSlot)
-    }
-    window.addEventListener('resize', onResize)
-
     return () => {
-      enterHandlers.forEach(({ el, handler }) => el.removeEventListener('mouseenter', handler))
-      container.removeEventListener('mouseleave', onMouseLeave)
-      window.removeEventListener('resize', onResize)
-      if (leaveTimer) clearTimeout(leaveTimer)
       clearTimeout(unlockTimer)
     }
   }, [centerIndex, totalCards, getVisibleMap, needsPagination])
@@ -261,9 +180,9 @@ export default function UseCaseFan({ items }: UseCaseFanProps) {
 
   return (
     <div className="flex flex-col items-center">
-      <div ref={containerRef} className="fan-layout relative flex h-[170px] w-[320px] items-center justify-center sm:h-[182px] sm:w-[340px]">
+      <div ref={containerRef} className="fan-layout relative flex h-[212px] w-[460px] items-center justify-center sm:h-[236px] sm:w-[500px]">
         {items.map((item, index) => (
-          <div key={index} className="fan-card absolute left-1/2 top-1/2 -ml-[68px] -mt-[64px] sm:-ml-[74px] sm:-mt-[68px]">
+          <div key={index} className="fan-card absolute left-1/2 top-1/2 -ml-[82px] -mt-[76px] sm:-ml-[92px] sm:-mt-[84px]">
             <UseCaseCard item={item} />
           </div>
         ))}
