@@ -59,12 +59,6 @@ export function Solution() {
             <br />
             Savoir que ça arrive, si.
           </h2>
-          <p className="mt-6 max-w-[56ch] text-[16.5px] leading-relaxed text-white/55">
-            Chaque année, la diaspora envoie de l’argent liquide à ses proches restés au pays.
-            L’intention est entière. Mais une fois la somme remise, elle échappe : réaffectée en
-            route, ou l’échéance qu’on voulait couvrir reste impayée. Ce n’est le tort de
-            personne, c’est la limite du liquide.
-          </p>
         </Reveal>
 
         <ComparisonMockup />

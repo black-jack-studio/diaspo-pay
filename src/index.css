@@ -35,6 +35,37 @@
   50% { opacity: 1; }
 }
 
+/* a soft bright band sweeps across a dot-pattern image, lighting up whatever
+   dots sit under it — used for the Hero's world map */
+.dot-wave-layer {
+  -webkit-mask-image: linear-gradient(
+    115deg,
+    transparent 0%,
+    transparent 38%,
+    rgba(255, 255, 255, 0.95) 50%,
+    transparent 62%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    115deg,
+    transparent 0%,
+    transparent 38%,
+    rgba(255, 255, 255, 0.95) 50%,
+    transparent 62%,
+    transparent 100%
+  );
+  -webkit-mask-size: 280% 280%;
+  mask-size: 280% 280%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  animation: dot-wave 4s linear infinite;
+}
+
+@keyframes dot-wave {
+  0% { -webkit-mask-position: -90% -20%; mask-position: -90% -20%; }
+  100% { -webkit-mask-position: 90% 20%; mask-position: 90% 20%; }
+}
+
 html {
   scroll-behavior: smooth;
   background: var(--color-bg);

@@ -7,44 +7,48 @@ const TRAIL = [1, 0.72, 0.44, 0.22]
 
 export function ComparisonMockup() {
   return (
-    <Reveal delay={0.1} className="mt-14 grid overflow-hidden rounded-2xl border border-white/10 md:grid-cols-2">
-      <div className="flex flex-col justify-center bg-white/[0.02] p-7 md:p-9">
-        <div>
-          <div className="font-mono text-[10.5px] tracking-[0.14em] text-white/35">AUJOURD’HUI</div>
-          <p className="mt-3 font-accent text-[22px] leading-snug text-white/70">
-            Vous envoyez une somme. Le suivi s’arrête à la remise.
-          </p>
-        </div>
+    <Reveal delay={0.1} className="mt-8">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/40 via-white/10 to-white/25 p-px shadow-[0_0_50px_-20px_rgba(140,180,255,0.35)]">
+        <div className="grid overflow-hidden rounded-[15px] md:grid-cols-2">
+          <div className="flex flex-col justify-center bg-white/[0.02] p-7 md:p-9">
+            <div>
+              <div className="font-mono text-[10.5px] tracking-[0.14em] text-white/35">AUJOURD’HUI</div>
+              <p className="mt-3 font-accent text-[22px] leading-snug text-white/70">
+                Vous envoyez une somme. Le suivi s’arrête à la remise.
+              </p>
+            </div>
 
-        <Stagger className="mt-7 flex items-center">
-          {TRAIL.map((o, i) => (
-            <motion.span key={i} variants={staggerItem} className="flex items-center">
-              <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-white" style={{ opacity: o }} />
-              <span className="mx-1.5 h-px w-8 shrink-0 bg-white/15 sm:w-11" />
-            </motion.span>
-          ))}
-          <motion.span
-            variants={staggerItem}
-            className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-dashed border-white/20 font-mono text-[11px] text-white/30 animate-[twinkle_3s_ease-in-out_infinite]"
-          >
-            ?
-          </motion.span>
-        </Stagger>
-        <p className="mt-2.5 font-mono text-[10px] tracking-[0.1em] text-white/25">AUCUN SUIVI APRÈS LA REMISE</p>
-      </div>
+            <Stagger className="mt-7 flex items-center">
+              {TRAIL.map((o, i) => (
+                <motion.span key={i} variants={staggerItem} className="flex items-center">
+                  <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-white" style={{ opacity: o }} />
+                  <span className="mx-1.5 h-px w-8 shrink-0 bg-white/15 sm:w-11" />
+                </motion.span>
+              ))}
+              <motion.span
+                variants={staggerItem}
+                className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-dashed border-white/20 font-mono text-[11px] text-white/30 animate-[twinkle_3s_ease-in-out_infinite]"
+              >
+                ?
+              </motion.span>
+            </Stagger>
+            <p className="mt-2.5 font-mono text-[10px] tracking-[0.1em] text-white/25">AUCUN SUIVI APRÈS LA REMISE</p>
+          </div>
 
-      <div className="relative flex flex-col items-center gap-7 overflow-hidden border-t border-white/10 bg-gradient-to-br from-[#101b34] to-[#0b1226] p-7 sm:flex-row sm:justify-between md:border-l md:border-t-0 md:p-9">
-        <AuroraBackdrop />
+          <div className="relative flex flex-col items-center gap-7 overflow-hidden border-t border-white/10 bg-gradient-to-br from-[#101b34] to-[#0b1226] p-7 sm:flex-row sm:justify-between md:border-l md:border-t-0 md:p-9">
+            <AuroraBackdrop />
 
-        <div className="relative">
-          <div className="font-mono text-[10.5px] tracking-[0.14em] text-[var(--color-accent-soft)]">AVEC DIASPO-PAY</div>
-          <p className="mt-3 max-w-[30ch] font-accent text-[22px] leading-snug text-white">
-            Vous choisissez la facture. Elle est réglée à sa source, et vous recevez la preuve.
-          </p>
-        </div>
+            <div className="relative">
+              <div className="font-mono text-[10.5px] tracking-[0.14em] text-[var(--color-accent-soft)]">AVEC DIASPO-PAY</div>
+              <p className="mt-3 max-w-[30ch] font-accent text-[22px] leading-snug text-white">
+                Vous choisissez la facture. Elle est réglée à sa source, et vous recevez la preuve.
+              </p>
+            </div>
 
-        <div className="relative shrink-0">
-          <PhoneMockup />
+            <div className="relative shrink-0">
+              <PhoneMockup />
+            </div>
+          </div>
         </div>
       </div>
     </Reveal>
@@ -58,7 +62,7 @@ function AuroraBackdrop() {
         src={earthGlow}
         alt=""
         className="absolute inset-0 h-full w-full object-cover"
-        style={{ objectPosition: '30% 68%', filter: 'blur(10px)', transform: 'scaleX(-1.3) scaleY(1.3)' }}
+        style={{ objectPosition: '30% 68%', filter: 'blur(4px)', transform: 'scaleX(-1.3) scaleY(1.3)' }}
       />
       <div className="absolute inset-0 bg-[#0b1226]/25" />
       <div className="absolute inset-0 bg-gradient-to-br from-[#101b34]/45 to-[#0b1226]/60" />
