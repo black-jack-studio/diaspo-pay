@@ -11,7 +11,7 @@ export function InvestorsJoin() {
             <h2 className="mt-4 font-display text-[clamp(24px,3vw,32px)] leading-[1.1] text-[#0a0f1c]">
               Un flux structurel. Une approche différente.
             </h2>
-            <p className="mt-5 max-w-[42ch] text-[15px] leading-relaxed text-[#0a0f1c]/60">
+            <p className="mt-5 max-w-[50ch] text-[15px] leading-relaxed text-[#0a0f1c]/60">
               Les acteurs historiques répondent au besoin d’acheminer de l’argent. Diaspo-Pay
               adresse le vrai manque : s’assurer que la dépense visée a bien été réglée.
             </p>
