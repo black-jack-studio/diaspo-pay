@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { LogoMark } from './LogoMark'
 
 export function Footer() {
@@ -18,10 +19,10 @@ export function Footer() {
           <div>
             <div className="font-mono text-[10.5px] tracking-[0.14em] text-white/35">NAVIGATION</div>
             <div className="mt-4 flex flex-col gap-2.5 text-[13.5px] text-white/55">
-              <a href="#solution" className="hover:text-white">La solution</a>
-              <a href="#investisseurs" className="hover:text-white">Investisseurs</a>
-              <a href="#rejoindre" className="hover:text-white">Rejoindre</a>
-              <a href="#a-propos" className="hover:text-white">À propos</a>
+              <Link to="/#solution" className="hover:text-white">La solution</Link>
+              <Link to="/investisseurs" className="hover:text-white">Investisseurs</Link>
+              <Link to="/rejoindre" className="hover:text-white">Rejoindre</Link>
+              <Link to="/#a-propos" className="hover:text-white">À propos</Link>
             </div>
           </div>
           <div>

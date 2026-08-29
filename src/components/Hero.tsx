@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { SpaceScene } from './SpaceScene'
+import { WorldMapScene } from './WorldMapScene'
 
 const CORRIDORS = [
   'SÉNÉGAL', 'CÔTE D’IVOIRE', 'CAMEROUN', 'MALI', 'RD CONGO', 'GUINÉE',
@@ -10,7 +10,7 @@ const CORRIDORS = [
 export function Hero() {
   return (
     <section id="accueil" className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden pt-32">
-      <SpaceScene />
+      <WorldMapScene />
 
       <div className="relative z-10 mx-auto w-full max-w-[1500px] px-6 pb-20 md:px-8">
         <motion.div

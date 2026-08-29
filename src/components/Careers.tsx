@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { Reveal, Stagger, staggerItem } from '../lib/Reveal'
 import { IconHeart, IconReceipt, IconCompass } from './Icons'
+import { PageHero } from './PageHero'
+import { Contact } from './Contact'
 
 const VALUES = [
   { icon: IconHeart, title: 'Soutenir sans infantiliser', body: 'La diaspora aide avec fierté. Nos produits respectent cette dignité, dans le ton comme dans l’usage.' },
@@ -17,30 +19,17 @@ const ROLES = [
 
 export function Careers() {
   return (
-    <section id="rejoindre" className="relative border-t border-white/[0.06] py-28 md:py-36">
+    <>
+      <PageHero
+        eyebrow="Rejoindre l’aventure"
+        title="On construit l’équipe qui portera le lancement."
+        description="L’application arrive à la mi-octobre. Produit, conformité, déploiement : l’équipe se constitue dès aujourd’hui sur les corridors Europe, Afrique et Caraïbes."
+        primaryCta={{ label: 'Candidature spontanée', to: '#contact' }}
+        secondaryCta={{ label: 'Voir les profils recherchés', to: '#profils' }}
+      />
+      <section className="relative border-t border-white/[0.06] py-28 md:py-36">
       <div className="mx-auto max-w-[1180px] px-6 md:px-8">
-        <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
-          <Reveal className="max-w-2xl">
-            <span className="eyebrow">Rejoindre l’aventure</span>
-            <h2 className="mt-4 text-[clamp(28px,4vw,44px)] leading-[1.08] text-white">
-              On construit l’équipe qui portera le lancement.
-            </h2>
-            <p className="mt-6 max-w-[54ch] text-[16.5px] leading-relaxed text-white/55">
-              L’application arrive à la mi-octobre. Produit, conformité, déploiement : l’équipe se
-              constitue dès aujourd’hui sur les corridors Europe, Afrique et Caraïbes.
-            </p>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <a
-              href="#contact"
-              className="inline-flex shrink-0 items-center gap-2 rounded-full border border-white/20 px-6 py-3.5 text-[14px] font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/[0.06]"
-            >
-              Candidature spontanée →
-            </a>
-          </Reveal>
-        </div>
-
-        <Stagger className="mt-16 grid gap-4 md:grid-cols-3">
+        <Stagger className="grid gap-4 md:grid-cols-3">
           {VALUES.map((v) => (
             <motion.div key={v.title} variants={staggerItem} className="rounded-2xl border border-white/10 bg-white/[0.02] p-7">
               <v.icon className="h-6 w-6 text-[var(--color-accent-soft)]" />
@@ -50,7 +39,7 @@ export function Careers() {
           ))}
         </Stagger>
 
-        <div className="mt-24">
+        <div id="profils" className="mt-24">
           <Reveal>
             <span className="eyebrow">Profils recherchés</span>
             <h3 className="mt-4 font-display text-[clamp(22px,2.8vw,30px)] text-white">Quatre familles de compétences</h3>
@@ -70,6 +59,14 @@ export function Careers() {
           </Stagger>
         </div>
       </div>
-    </section>
+      </section>
+
+      <Contact
+        roles={['Candidat']}
+        eyebrow="Candidature"
+        title="Postulez maintenant."
+        description="Vous voulez rejoindre l’aventure ? Envoyez votre profil, l’équipe fondatrice vous recontacte directement."
+      />
+    </>
   )
 }
