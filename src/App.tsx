@@ -1,6 +1,7 @@
 import { Nav } from './components/Nav'
 import { Hero } from './components/Hero'
 import { Solution } from './components/Solution'
+import { Community } from './components/Community'
 import { Investors } from './components/Investors'
 import { Scale } from './components/Scale'
 import { Careers } from './components/Careers'
@@ -16,6 +17,7 @@ function App() {
       <main>
         <Hero />
         <Solution />
+        <Community />
         <Investors />
         <Scale />
         <Careers />
