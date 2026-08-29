@@ -54,7 +54,7 @@ export function Footer() {
         >
           Diaspo·Pay
         </div>
-        <div className="mt-3 font-mono text-[10.5px] tracking-[0.3em] text-white/25 sm:text-[12px]">
+        <div className="mt-4 font-mono text-[15px] tracking-[0.3em] text-white/25 sm:text-[18px]">
           SOLUTION +
         </div>
       </div>
