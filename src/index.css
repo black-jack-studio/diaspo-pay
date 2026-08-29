@@ -111,53 +111,15 @@ h1, h2, h3 {
   color: #a9cbff;
 }
 
-@property --border-angle {
-  syntax: '<angle>';
-  inherits: false;
-  initial-value: 0deg;
-}
-
-@keyframes glow-border-spin {
-  to { --border-angle: 360deg; }
-}
-
-.glow-border {
-  position: relative;
-}
-
-.glow-border::before,
-.glow-border::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: conic-gradient(
-    from var(--border-angle),
-    transparent 0deg,
-    transparent 265deg,
-    #a78bfa 285deg,
-    #7fb0ff 305deg,
-    #34d399 325deg,
-    #fb923c 345deg,
-    transparent 360deg
-  );
-  animation: glow-border-spin 4s linear infinite;
-  pointer-events: none;
-}
-
-.glow-border::before {
-  padding: 1.5px;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  z-index: 1;
-}
-
-.glow-border::after {
-  inset: -12px;
-  filter: blur(18px);
-  opacity: 0.8;
-  z-index: 0;
+.liquid-glass-card {
+  background: rgba(120, 124, 136, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 30px 60px -24px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  transform: rotate(12deg);
 }
 
 @media (prefers-reduced-motion: reduce) {
