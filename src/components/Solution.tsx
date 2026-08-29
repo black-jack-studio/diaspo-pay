@@ -37,7 +37,7 @@ function StepsPhoneMockup() {
 
 export function Solution() {
   return (
-    <section id="solution" className="relative border-t border-white/[0.06] py-28 md:py-36">
+    <section id="solution" className="relative border-t border-white/[0.06] py-16 md:py-24">
       <div className="mx-auto max-w-[1180px] px-6 md:px-8">
         <Reveal className="max-w-2xl">
           <span className="eyebrow">Le constat</span>
@@ -52,7 +52,7 @@ export function Solution() {
       </div>
 
       {/* Mécanisme */}
-      <div id="mecanisme" className="mx-auto mt-32 max-w-[1180px] px-6 md:px-8">
+      <div id="mecanisme" className="mx-auto mt-20 max-w-[1180px] px-6 md:px-8">
         <Reveal className="max-w-xl">
           <span className="eyebrow">Comment ça marche</span>
           <h2 className="mt-4 text-[clamp(26px,3.4vw,38px)] leading-[1.1] text-white">

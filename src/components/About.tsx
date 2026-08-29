@@ -3,7 +3,7 @@ import founderPhoto from '../assets/founder-eric-koffounda.png'
 
 export function About() {
   return (
-    <section id="a-propos" className="relative border-t border-white/[0.06] bg-[#040610] py-28 md:py-36">
+    <section id="a-propos" className="relative border-t border-white/[0.06] bg-[#040610] py-16 md:py-24">
       <div className="mx-auto max-w-[1180px] px-6 md:px-8">
         <div className="grid items-center gap-14 lg:grid-cols-[340px_1fr] lg:gap-10">
           <Reveal className="relative mx-auto w-72 aspect-[1169/940] lg:mx-0 lg:w-[340px]">

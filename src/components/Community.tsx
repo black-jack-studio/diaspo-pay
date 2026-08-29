@@ -40,7 +40,7 @@ function Tile({ tile, index }: { tile: (typeof TILES)[number]; index: number }) 
 
 export function Community() {
   return (
-    <section className="relative border-t border-white/[0.06] py-28 md:py-36">
+    <section className="relative border-t border-white/[0.06] py-16 md:py-24">
       <div className="mx-auto max-w-[1180px] px-6 md:px-8">
         <Reveal className="max-w-2xl">
           <span className="eyebrow">La diaspora</span>

@@ -27,7 +27,7 @@ export function Careers() {
         primaryCta={{ label: 'Candidature spontanée', to: '#contact' }}
         secondaryCta={{ label: 'Voir les profils recherchés', to: '#profils' }}
       />
-      <section className="relative border-t border-white/[0.06] py-28 md:py-36">
+      <section className="relative border-t border-white/[0.06] py-16 md:py-24">
       <div className="mx-auto max-w-[1180px] px-6 md:px-8">
         <Stagger className="grid gap-4 md:grid-cols-3">
           {VALUES.map((v) => (
@@ -39,7 +39,7 @@ export function Careers() {
           ))}
         </Stagger>
 
-        <div id="profils" className="mt-24">
+        <div id="profils" className="mt-16">
           <Reveal>
             <span className="eyebrow">Profils recherchés</span>
             <h3 className="mt-4 font-display text-[clamp(22px,2.8vw,30px)] text-white">Quatre familles de compétences</h3>

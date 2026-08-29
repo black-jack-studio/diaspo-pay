@@ -21,7 +21,7 @@ export function Investors() {
         primaryCta={{ label: 'Échanger avec le fondateur', to: '#contact' }}
         secondaryCta={{ label: 'Voir le calendrier', to: '#calendrier' }}
       />
-      <section className="relative border-t border-white/[0.06] bg-[#040610] py-28 md:py-36">
+      <section className="relative border-t border-white/[0.06] bg-[#040610] py-16 md:py-24">
       <div className="mx-auto max-w-[1180px] px-6 md:px-8">
         <div id="calendrier">
           <Reveal>
@@ -41,7 +41,7 @@ export function Investors() {
           </Stagger>
         </div>
 
-        <Reveal className="mt-20 flex flex-col items-start gap-5 rounded-2xl border border-white/10 bg-gradient-to-br from-[#101b34] to-[#0b1226] p-9 sm:flex-row sm:items-center sm:justify-between">
+        <Reveal className="mt-14 flex flex-col items-start gap-5 rounded-2xl border border-white/10 bg-gradient-to-br from-[#101b34] to-[#0b1226] p-9 sm:flex-row sm:items-center sm:justify-between">
           <p className="max-w-[42ch] font-display text-[19px] leading-snug text-white">
             Les projections et les éléments confidentiels se partagent en rendez-vous direct.
           </p>

@@ -4,7 +4,7 @@ import { Counter } from '../lib/Counter'
 
 export function Scale() {
   return (
-    <section className="relative overflow-hidden border-t border-white/[0.06] bg-[#040610] py-28 md:py-36">
+    <section className="relative overflow-hidden border-t border-white/[0.06] bg-[#040610] py-16 md:py-24">
       <Tiles />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_15%,rgba(4,6,16,0.6)_75%,rgba(4,6,16,0.92)_100%)]" />
 

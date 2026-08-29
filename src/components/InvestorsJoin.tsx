@@ -3,7 +3,7 @@ import { Reveal } from '../lib/Reveal'
 
 export function InvestorsJoin() {
   return (
-    <section className="relative border-t border-white/[0.06] bg-[#040610] py-28 md:py-36">
+    <section className="relative border-t border-white/[0.06] bg-[#040610] py-16 md:py-24">
       <div className="mx-auto max-w-[1180px] px-6 md:px-8">
         <div className="grid gap-12 rounded-[32px] bg-white p-8 sm:p-12 md:grid-cols-2 md:gap-0 md:divide-x md:divide-black/10 md:p-16">
           <Reveal className="md:pr-16">

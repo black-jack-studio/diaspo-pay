@@ -73,7 +73,7 @@ export function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="relative border-t border-white/[0.06] bg-[#040610] py-28 md:py-36">
+    <section id="faq" className="relative border-t border-white/[0.06] bg-[#040610] py-16 md:py-24">
       <div className="mx-auto max-w-[860px] px-6 md:px-8">
         <Reveal className="text-center">
           <span className="eyebrow">Questions fréquentes</span>

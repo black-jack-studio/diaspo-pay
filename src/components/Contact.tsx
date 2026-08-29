@@ -51,7 +51,7 @@ export function Contact({
   }
 
   return (
-    <section id="contact" className="relative border-t border-white/[0.06] bg-[#040610] py-20 md:py-28">
+    <section id="contact" className="relative border-t border-white/[0.06] bg-[#040610] py-16 md:py-24">
       <div className="mx-auto max-w-[1180px] px-6 md:px-8">
         <div className="rounded-[32px] bg-white p-8 sm:p-10 md:p-12">
           <Reveal className="max-w-2xl">
