@@ -46,6 +46,18 @@ export function Footer() {
           <span>SERVICE DE PAIEMENT NON ENCORE OUVERT AU PUBLIC</span>
         </div>
       </div>
+
+      <div className="mt-16 select-none overflow-hidden px-6 text-center">
+        <div
+          className="whitespace-nowrap font-display font-[800] leading-[0.85] tracking-[-0.04em] text-white/[0.07]"
+          style={{ fontSize: 'clamp(40px, 12vw, 160px)' }}
+        >
+          Diaspo·Pay
+        </div>
+        <div className="mt-3 font-mono text-[10.5px] tracking-[0.3em] text-white/25 sm:text-[12px]">
+          SOLUTION +
+        </div>
+      </div>
     </footer>
   )
 }
