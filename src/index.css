@@ -102,9 +102,15 @@ h1, h2, h3 {
   border-radius: inherit;
   background: conic-gradient(
     from var(--border-angle),
-    #a78bfa, #7fb0ff, #34d399, #fb923c, #fb7185, #a78bfa
+    transparent 0deg,
+    transparent 265deg,
+    #a78bfa 285deg,
+    #7fb0ff 305deg,
+    #34d399 325deg,
+    #fb923c 345deg,
+    transparent 360deg
   );
-  animation: glow-border-spin 6s linear infinite;
+  animation: glow-border-spin 4s linear infinite;
   pointer-events: none;
 }
 
@@ -117,9 +123,9 @@ h1, h2, h3 {
 }
 
 .glow-border::after {
-  inset: -10px;
-  filter: blur(16px);
-  opacity: 0.55;
+  inset: -12px;
+  filter: blur(18px);
+  opacity: 0.8;
   z-index: 0;
 }
 
