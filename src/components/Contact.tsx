@@ -137,14 +137,6 @@ export function Contact({
                   <a href="https://www.linkedin.com/in/eric-koffounda-871b04124/" target="_blank" rel="noreferrer" className="hover:text-[#0a0f1c]">LinkedIn →</a>
                 </div>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-[#101b34] to-[#0b1226] p-7">
-                <div className="font-mono text-[10.5px] tracking-[0.14em] text-[var(--color-accent-soft)]">BON À SAVOIR</div>
-                <p className="mt-3 text-[13.5px] leading-relaxed text-white/60">
-                  L’application n’est pas encore ouverte : aucune facture ne peut être réglée depuis
-                  ce site. Diaspo-Pay finalise son dispositif de conformité (KYC/AML) avant
-                  l’ouverture, prévue avec le lancement à la mi-octobre.
-                </p>
-              </div>
             </Reveal>
           </div>
         </div>
