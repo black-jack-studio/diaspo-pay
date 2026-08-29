@@ -2,7 +2,7 @@ import { useState, type FormEvent, type ReactNode } from 'react'
 import { Reveal } from '../lib/Reveal'
 
 const inputClass =
-  'w-full rounded-xl border border-black/12 bg-black/[0.03] px-4 py-3.5 text-[14.5px] text-[#0a0f1c] placeholder:text-black/35 outline-none transition-colors focus:border-[var(--color-accent-deep)] focus:bg-black/[0.05]'
+  'w-full rounded-xl border border-black/12 bg-black/[0.03] px-4 py-3 text-[14.5px] text-[#0a0f1c] placeholder:text-black/35 outline-none transition-colors focus:border-[var(--color-accent-deep)] focus:bg-black/[0.05]'
 
 export function Contact({
   roles = ['Futur utilisateur'],
@@ -65,9 +65,9 @@ export function Contact({
           </Reveal>
 
           <div className="mt-10 grid gap-8 lg:grid-cols-[1.3fr_1fr] lg:gap-12">
-            <Reveal delay={0.1} className="rounded-2xl border border-black/10 bg-black/[0.02] p-7 md:p-10">
+            <Reveal delay={0.1} className="rounded-2xl border border-black/10 bg-black/[0.02] p-6 md:p-8">
               {sent ? (
-                <div className="flex flex-col items-start gap-3 py-10">
+                <div className="flex flex-col items-start gap-3 py-6">
                   <span className="font-accent text-[28px] text-[#0a0f1c]">C’est noté.</span>
                   <p className="max-w-[42ch] text-[14.5px] leading-relaxed text-[#0a0f1c]/60">
                     Votre message est bien arrivé à l’équipe Diaspo-Pay. Vous serez prévenu dès
@@ -75,7 +75,7 @@ export function Contact({
                   </p>
                 </div>
               ) : (
-                <form className="space-y-6" onSubmit={onSubmit}>
+                <form className="space-y-4" onSubmit={onSubmit}>
                   {roles.length > 1 && (
                     <div>
                       <div className="mb-3 font-mono text-[10.5px] tracking-[0.14em] text-black/40">JE SUIS</div>
@@ -104,7 +104,7 @@ export function Contact({
                     <input name="phone" className={inputClass} placeholder="Téléphone (optionnel)" />
                     <input name="country" className={inputClass} placeholder="Pays de résidence" />
                   </div>
-                  <textarea name="message" className={`${inputClass} min-h-32 resize-none`} placeholder="Message" />
+                  <textarea name="message" className={`${inputClass} min-h-24 resize-none`} placeholder="Message" />
 
                   {error && <p className="text-[13.5px] text-red-600">{error}</p>}
 
